@@ -4,6 +4,7 @@ const userInput = document.getElementById("user-input");
 const apiSelector = document.getElementById("api-selector");
 
 const BASE_URL = process.env.API_ENDPOINT;
+console.log(BASE_URL)
 
 // Create a message bubble
 function createMessageBubble(content, sender = "user") {
@@ -67,8 +68,8 @@ async function getAssistantResponse(userMessage) {
   const mode = apiSelector.value;
   const url = 
     mode === "assistant"
-      ? BASE_URL + "/assistant"
-      : BASE_URL + "/chat";
+      ? $`{BASE_URL}/assistant`
+      : $`{BASE_URL}/chat`;
 
   const response = await fetch(url, {
     method: "POST",
